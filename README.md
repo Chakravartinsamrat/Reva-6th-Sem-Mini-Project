@@ -5,6 +5,10 @@
 
 ### Good practice is to create a venv but Since Ollama will only run in Appdata Directory, Not much can be done
 
+>python -m venv venv
+
+> ./venv/Scripts//activate
+
 > pip install -r requirements.txt
 
 > python manage.py makemigrations
