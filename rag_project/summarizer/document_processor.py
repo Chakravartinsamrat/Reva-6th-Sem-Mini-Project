@@ -6,6 +6,7 @@ from newspaper import Article
 import nltk
 from io import BytesIO
 
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 # Download NLTK data on first run
 try:
     nltk.data.find('tokenizers/punkt')
@@ -18,7 +19,8 @@ class DocumentProcessor:
         """Extract text from PDF files using OCR if needed."""
         try:
             # Convert PDF to images
-            images = convert_from_path(file_path)
+            poppler_path = r"C:\Users\piyus\Documents\popper\poppler-24.08.0\Library\bin"
+            images = convert_from_path(file_path,poppler_path=poppler_path)
             text = ""
             
             # Extract text from each page
